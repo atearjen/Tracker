@@ -1,4 +1,5 @@
-
+//  Copyright (c) 2019 Aleksander Woźniak
+//  Licensed under Apache License v2.0
 
 import 'package:date_utils/date_utils.dart';
 import 'package:flutter/material.dart';
