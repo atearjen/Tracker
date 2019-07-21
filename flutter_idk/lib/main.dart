@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 //      _selectedDay.subtract(Duration(days: 4)): ['Event A5', 'Event B5', 'Event C5'],
 //      _selectedDay.subtract(Duration(days: 2)): ['Event A6', 'Event B6'],
 //      _selectedDay: ['Event A7', 'Event B7', 'Event C7', 'Event D7'],
-//      _selectedDay.add(Duration(days: 1)): ['Event A8', 'Event B8', 'Event C8', 'Event D8'],
+       // _selectedDay.add(Duration(days: 0)): ['Facebook Time: 45', 'Instagram Time: 50', 'Mood Score: 8'],
 //      _selectedDay.add(Duration(days: 3)): Set.from(['Event A9', 'Event A9', 'Event B9']).toList(),
 //      _selectedDay.add(Duration(days: 7)): ['Event A10', 'Event B10', 'Event C10'],
 //      _selectedDay.add(Duration(days: 11)): ['Event A11', 'Event B11'],
@@ -144,7 +144,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
 
   // Simple TableCalendar configuration (using Styles)
-  Widget _buildTableCalendar() {
+  Widget _buildTableCalendar()  {
+//    final SharedPreferences prefs =  SharedPreferences.getInstance();
     return TableCalendar(
       locale: 'en_US',
       events: _visibleEvents,
@@ -159,9 +160,10 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         CalendarFormat.week: 'Week',
       },
       calendarStyle: CalendarStyle(
-        selectedColor: Colors.deepOrange[400],
-        todayColor: Colors.deepOrange[200],
+       selectedColor: Colors.deepOrange[400],
         markersColor: Colors.brown[700],
+        todayColor: Colors.deepOrange[200],
+//        color = getColor();
       ),
       headerStyle: HeaderStyle(
         formatButtonTextStyle: TextStyle().copyWith(color: Colors.white, fontSize: 15.0),
@@ -175,7 +177,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     );
   }
 
-
+//  Widget getColor() {
+//    SharedPreferences prefs =  SharedPreferences.getInstance();
+//
+//    return color
+//  }
   // More advanced TableCalendar configuration (using Builders & Styles)
   Widget _buildTableCalendarWithBuilders() {
     return TableCalendar(
@@ -378,6 +384,11 @@ class _SecondRouteState extends State<SecondRoute> {
       getInformation();
     });
   }
+//  String getColor()  {
+//    sharedPreferences = SharedPreferences.getInstance();
+//    String mood = sharedPreferences.getString("moodscore");
+//    return mood;
+//  }
 
   Widget _body() {
     return new Container(
